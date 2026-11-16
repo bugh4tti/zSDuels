@@ -1,0 +1,233 @@
+# ============================================================
+#  zSDuels - config.yml
+#  Colores: &a, hex "#RRGGBB" o "&#RRGGBB"
+#  Degradado por letra: #FDFF00&lM#FEFF2C&lE
+# ============================================================
+
+settings:
+  # Comando que se ejecuta al terminar el duelo (sin /)
+  spawn-command: "spawn"
+  # Los duelos empiezan activados para los jugadores nuevos
+  enabled-by-default: true
+  countdown-seconds: 5
+  # Si el duelo pasa de este tiempo, termina en empate (0 = sin limite)
+  max-duel-seconds: 600
+  request-expire-seconds: 30
+  rematch-expire-seconds: 30
+  # No puedes retar si recibiste/diste daño PvP hace menos de X segundos
+  combat-block-seconds: 15
+  # Cada cuantos segundos se avisa la posicion en la cola
+  queue-message-interval: 5
+  queue-seconds-per-position: 3
+  # Gemas que se ganan al ganar un duelo
+  gem-reward: 1
+  broadcast-win: true
+  # Dentro de la arena
+  block-break-place: false
+  disable-ender-pearls: true
+  disable-item-drop: true
+  disable-item-pickup: true
+  # Comandos que SI funcionan durante un duelo (sin /)
+  allowed-commands:
+    - msg
+    - tell
+    - w
+    - r
+    - reply
+    - duel
+    - duels
+    - zsduels
+
+top:
+  # Cantidad de puestos para los placeholders de hologramas
+  size: 10
+  refresh-seconds: 30
+  empty-name: "---"
+  empty-value: "0"
+
+sounds:
+  countdown: "block.note_block.pling"
+  start: "entity.ender_dragon.growl"
+  win: "entity.player.levelup"
+  lose: "entity.villager.no"
+  request: "entity.experience_orb.pickup"
+  click: "ui.button.click"
+  error: "entity.villager.no"
+  purchase: "entity.player.levelup"
+
+titles:
+  countdown:
+    title: "&e&l%seconds%"
+    subtitle: "&7Prepárate..."
+    fade-in: 0
+    stay: 20
+    fade-out: 5
+  start:
+    title: "&a&l¡PELEA!"
+    subtitle: "&7Kit: &f%kit%"
+    fade-in: 0
+    stay: 30
+    fade-out: 10
+  win:
+    title: "#55FF55&l¡VICTORIA!"
+    subtitle: "&7Venciste a &f%opponent%"
+    fade-in: 5
+    stay: 50
+    fade-out: 10
+  lose:
+    title: "#FF5555&lDERROTA"
+    subtitle: "&7Perdiste contra &f%opponent%"
+    fade-in: 5
+    stay: 50
+    fade-out: 10
+  draw:
+    title: "&e&lEMPATE"
+    subtitle: "&7Se acabó el tiempo"
+    fade-in: 5
+    stay: 50
+    fade-out: 10
+
+messages:
+  prefix: "#4DB8FF&lDUELOS &8» &7"
+
+  no-permission: "%prefix%&cNo tienes permiso para hacer eso."
+  only-players: "&cSolo los jugadores pueden usar este comando."
+  player-not-found: "%prefix%&cEse jugador no está conectado."
+  reloaded: "%prefix%&aConfiguración recargada (config, menu, kits y arenas)."
+
+  duels-enabled: "%prefix%&aHas activado los duelos. Ahora puedes recibir retos."
+  duels-disabled: "%prefix%&cHas desactivado los duelos."
+  self-challenge: "%prefix%&cNo puedes retarte a ti mismo."
+  target-duels-disabled: "%prefix%&c%target% tiene los duelos desactivados."
+  in-combat: "%prefix%&cNo puedes retar si estás en combate."
+  target-in-combat: "%prefix%&c%target% está en combate."
+  already-in-duel: "%prefix%&cYa estás en un duelo."
+  target-in-duel: "%prefix%&c%target% ya está en un duelo."
+  already-in-queue: "%prefix%&cYa estás en la cola. Usa &f/duel leave &cpara salir."
+  not-in-queue: "%prefix%&cNo estás en ninguna cola."
+  kit-not-found: "%prefix%&cEse kit no existe. Kits: &f%kits%"
+  no-kits: "%prefix%&cNo hay kits configurados."
+  no-arenas: "%prefix%&cNo hay arenas disponibles. Avisa a un administrador."
+
+  challenge-sent: "%prefix%&aLe enviaste un reto a &f%target% &7(kit: &f%kit%&7)."
+  challenge-already-pending: "%prefix%&cYa tienes un reto pendiente con ese jugador."
+  challenge-received: "%prefix%&f%player% &7te retó a un duelo &7(kit: &f%kit%&7)."
+  challenge-accept-button: "&a&l[ACEPTAR]"
+  challenge-accept-hover: "&7Click para aceptar el duelo"
+  challenge-deny-button: "&c&l[RECHAZAR]"
+  challenge-deny-hover: "&7Click para rechazar el duelo"
+  challenge-no-pending: "%prefix%&cNo tienes retos pendientes."
+  challenge-denied: "%prefix%&c%player% rechazó tu reto."
+  challenge-denied-self: "%prefix%&7Rechazaste el reto de &f%player%&7."
+  challenge-expired: "%prefix%&7El reto con &f%player% &7expiró."
+
+  queue-joined: "%prefix%&aEntraste a la cola de duelos aleatorios."
+  queue-left: "%prefix%&7Saliste de la cola."
+  queue-position: "&e&lCOLAS &8» &7Estás posicionado en &c%position% &7de &c%total%&7. Tiempo estimado: &c%time% seconds"
+  match-found: "%prefix%&aRival encontrado: &f%opponent% &7| Kit: &f%kit%"
+
+  duel-start: "%prefix%&a¡Que comience el duelo! &7Kit: &f%kit%"
+  win-message: "%prefix%&a¡Ganaste el duelo contra &f%opponent%&a!"
+  lose-message: "%prefix%&cPerdiste el duelo contra &f%opponent%&c."
+  draw-message: "%prefix%&eEl duelo terminó por tiempo. Nadie ganó."
+  disconnect-win: "%prefix%&a%opponent% se desconectó. ¡Ganaste el duelo!"
+  win-broadcast: "%prefix%&f%winner% &7venció a &c%loser% &7en un duelo."
+  gem-reward: "%prefix%&a+%amount% gema &7(Total: &f%gems%&7)"
+
+  leave-arena: "%prefix%&cNo puedes salir de la arena."
+  command-blocked: "%prefix%&cEse comando no funciona durante un duelo."
+  pearl-blocked: "%prefix%&cNo puedes usar perlas de ender en los duelos."
+
+  rematch-prompt: "%prefix%&7¿Quieres la revancha contra &f%opponent%&7?"
+  rematch-button: "&d&l[REVANCHA]"
+  rematch-hover: "&7Click para pedir la revancha"
+  rematch-none: "%prefix%&cNo tienes ninguna revancha disponible."
+  rematch-unavailable: "%prefix%&cLa revancha ya no está disponible."
+  rematch-expired: "%prefix%&7La revancha expiró."
+
+  spectate-start: "%prefix%&aAhora estás espectando el duelo de &f%player1% &7vs &f%player2%&7. Usa &f/duel leave &7para salir."
+  spectate-stop: "%prefix%&7Dejaste de espectar."
+  spectate-no-duel: "%prefix%&c%target% no está en un duelo."
+  spectate-busy: "%prefix%&cNo puedes espectar estando en un duelo o en la cola."
+  spectate-ended: "%prefix%&7El duelo que espectabas terminó."
+  spectate-none: "%prefix%&cNo hay duelos en vivo ahora mismo."
+
+  challenge-menu-info: "%prefix%&eEscribe el comando: &a/duel <jugador> [kit]"
+  rematch-menu-info: "%prefix%&7La revancha aparece al terminar un duelo."
+
+  kit-saved: "%prefix%&aGuardaste tu orden del kit &f%kit%&a."
+  kit-reset: "%prefix%&7Volviste al orden por defecto del kit &f%kit%&7."
+
+  shop-bought: "%prefix%&aCompraste &f%item% &apor &f%price% gemas&a."
+  shop-no-gems: "%prefix%&cNo tienes suficientes gemas. Necesitas &f%price% &cy tienes &f%gems%&c."
+
+  arena-usage:
+    - "%prefix%&eUso de arenas:"
+    - "&b/duel arena create <nombre>"
+    - "&b/duel arena delete <nombre>"
+    - "&b/duel arena setspawn1 <nombre> &7- tu posición"
+    - "&b/duel arena setspawn2 <nombre> &7- tu posición"
+    - "&b/duel arena setpos1 <nombre> &7- esquina 1 de la arena"
+    - "&b/duel arena setpos2 <nombre> &7- esquina 2 de la arena"
+    - "&b/duel arena list"
+  arena-created: "%prefix%&aArena &f%arena% &acreada. Configura spawns y esquinas."
+  arena-exists: "%prefix%&cEsa arena ya existe."
+  arena-not-found: "%prefix%&cEsa arena no existe."
+  arena-deleted: "%prefix%&7Arena &f%arena% &7eliminada."
+  arena-updated: "%prefix%&aArena &f%arena% &aactualizada (&f%what%&a)."
+  arena-list-header: "%prefix%&eArenas:"
+  arena-list-line: "&8▪ &f%arena% &8- %status% &8- &7%state%"
+  arena-list-empty: "%prefix%&7No hay arenas creadas."
+  forceend-done: "%prefix%&aDuelo de &f%target% &afinalizado."
+  forceend-not-in-duel: "%prefix%&c%target% no está en un duelo."
+
+  stats:
+    - "&8&m-------&r #4DB8FF&l Estadísticas de %name% &8&m-------"
+    - "&8▪ &7Victorias: &a%wins%"
+    - "&8▪ &7Derrotas: &c%losses%"
+    - "&8▪ &7Kills en duelos: &e%kills%"
+    - "&8▪ &7Winrate: &6%winrate%%"
+    - "&8▪ &7Racha actual: &d%streak% &8| &7Mejor racha: &d%best_streak%"
+    - "&8▪ &7Gemas: &a%gems%"
+  top-header: "%prefix%&eTop de duelos ganados:"
+  top-line: "&8#%pos% &f%name% &8- &a%value% victorias"
+  top-empty: "%prefix%&7Todavía no hay datos del top."
+
+  rules:
+    - "%prefix%#4DB8FF&lReglas del duelo"
+    - "&8▪ &fCuenta atrás antes de empezar."
+    - "&8▪ &fSin perlas de ender."
+    - "&8▪ &fNo puedes salir de la arena."
+    - "&8▪ &fSolo algunos comandos funcionan."
+    - "&8▪ &fSi te desconectas, pierdes."
+    - "&8▪ &fAl perder recuperas tus objetos reales."
+    - "&8▪ &fNo puedes retar si estás en combate."
+  guide:
+    - "%prefix%#4DB8FF&lGuía de duelos"
+    - "&8▪ &fReta a alguien con &a/duel <jugador> [kit]&f."
+    - "&8▪ &fO entra a la cola con el &aDuelo aleatorio&f (kit al azar)."
+    - "&8▪ &fEl rival acepta con &a/duel accept &fo con el botón del chat."
+    - "&8▪ &fPelean 1v1 con un kit; tus cosas reales se guardan y te las devolvemos."
+    - "&8▪ &fGanar un duelo te da &a1 gema &fpara la &a/duel shop&f."
+    - "&8▪ &fAl terminar puedes pedir la &dRevancha&f."
+    - "&8▪ &fMira peleas en vivo con &a/duel spectate&f."
+
+  help:
+    - "&8&m-------&r #4DB8FF&l zSDuels &8&m-------"
+    - "&b/duel <jugador> [kit] &7- Retar a un jugador"
+    - "&b/duel accept &7| &b/duel deny &7- Responder un reto"
+    - "&b/duel menu &7- Abrir el menú de duelos"
+    - "&b/duel random &7- Entrar a la cola (kit al azar)"
+    - "&b/duel leave &7- Salir de la cola o de espectar"
+    - "&b/duel toggle &7- Activar/desactivar duelos"
+    - "&b/duel spectate [jugador] &7- Espectar duelos"
+    - "&b/duel stats [jugador] &7- Ver estadísticas"
+    - "&b/duel top &7- Top de duelos ganados"
+    - "&b/duel kit &7- Editar el orden de tu kit"
+    - "&b/duel rematch &7- Pedir la revancha"
+    - "&b/duel shop &7- Tienda de gemas"
+    - "&b/duel rules &7| &b/duel guide &7- Reglas y guía"
+  help-admin:
+    - "&c/duel reload &7- Recargar archivos"
+    - "&c/duel arena ... &7- Administrar arenas"
+    - "&c/duel forceend <jugador> &7- Finalizar un duelo"
