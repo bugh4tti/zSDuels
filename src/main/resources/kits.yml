@@ -1,0 +1,125 @@
+# ============================================================
+#  zSDuels - kits.yml
+#
+#  Slots de items:
+#    0-8   = hotbar
+#    9-35  = inventario
+#    helmet, chestplate, leggings, boots, offhand = armadura y mano secundaria
+#
+#  Cada item:
+#    material:    MATERIAL (obligatorio)
+#    amount:      cantidad
+#    name:        nombre (acepta hex)
+#    lore:        lista de lineas
+#    enchantments: ["sharpness:5", "unbreaking:3"]  (nombres de Minecraft en minuscula)
+#    effects:     ["speed:180:1"]  (efecto:segundos:nivel) para pociones
+#    unbreakable: true/false
+#    hide-flags:  true/false
+#
+#  Cada kit:
+#    display-name: nombre en menus
+#    icon:         material del menu "Elige kit"
+#    random:       si puede salir en el duelo aleatorio
+#    permission:   permiso para usarlo ("" = todos)
+#
+#  Las armaduras/offhand quedan fijas en el editor;
+#  el jugador solo puede ordenar los slots 0-35.
+# ============================================================
+
+kits:
+  tierra:
+    display-name: "#2ECC71&lTIERRA &a[⚡]"
+    icon: GRASS_BLOCK
+    random: true
+    permission: ""
+    items:
+      0:
+        material: NETHERITE_SWORD
+        name: "#FF5555&lEspada de Tierra"
+        enchantments: ["sharpness:5", "unbreaking:3", "fire_aspect:2"]
+        hide-flags: true
+      1:
+        material: ENCHANTED_GOLDEN_APPLE
+        amount: 16
+      2:
+        material: GOLDEN_APPLE
+        amount: 32
+      3:
+        material: COBWEB
+        amount: 16
+      4:
+        material: SPLASH_POTION
+        name: "&bPoción de velocidad"
+        effects: ["speed:180:1"]
+      5:
+        material: SPLASH_POTION
+        name: "&cPoción de curación"
+        effects: ["instant_health:1:1"]
+      6:
+        material: TOTEM_OF_UNDYING
+      7:
+        material: TOTEM_OF_UNDYING
+      8:
+        material: COOKED_BEEF
+        amount: 64
+      helmet:
+        material: NETHERITE_HELMET
+        enchantments: ["protection:4", "unbreaking:3"]
+      chestplate:
+        material: NETHERITE_CHESTPLATE
+        enchantments: ["protection:4", "unbreaking:3"]
+      leggings:
+        material: NETHERITE_LEGGINGS
+        enchantments: ["protection:4", "unbreaking:3"]
+      boots:
+        material: NETHERITE_BOOTS
+        enchantments: ["protection:4", "unbreaking:3", "feather_falling:4"]
+      offhand:
+        material: TOTEM_OF_UNDYING
+
+# ============================================================
+#  Menú de editar kit (recursos)
+# ============================================================
+editor:
+  size: 54
+  title: "#3DEFC0✎ &fMi kit &8▸ &fKit &8| %kit_name%"
+  # Slots de las piezas fijas dentro del editor (no se pueden mover)
+  fixed-slots:
+    helmet: 36
+    chestplate: 37
+    leggings: 38
+    boots: 39
+    offhand: 40
+  filler:
+    enabled: false
+    material: BLACK_STAINED_GLASS_PANE
+    name: " "
+  buttons:
+    save:
+      slot: 48
+      material: LIME_CONCRETE
+      name: "#55FF55✔ Guardar mi orden"
+      lore:
+        - "&8Botón | Tu kit"
+        - ""
+        - "&fGuarda cómo quieres salir en"
+        - "&flos duelos con este kit."
+        - ""
+        - "#55FF55▪ ¡Click para guardar!"
+    reset:
+      slot: 50
+      material: RED_CONCRETE
+      name: "#FF5555✘ Volver al orden por defecto"
+      lore:
+        - "&8Botón | Tu kit"
+        - ""
+        - "&fBorra tu orden personal y usa"
+        - "&fel del kit."
+        - ""
+        - "#FF5555▪ ¡Click para resetear!"
+    back:
+      slot: 53
+      material: ARROW
+      name: "&7← Volver"
+      lore:
+        - "&e▪ ¡Click para volver!"
