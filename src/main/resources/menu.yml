@@ -1,0 +1,335 @@
+# ============================================================
+#  zSDuels - menu.yml
+#  Colores: &a, hex "#RRGGBB" o "&#RRGGBB". Degradado: #FDFF00&lM#FEFF2C&lE
+#
+#  Acciones (action):
+#   PROFILE, CHALLENGE, GUIDE, RULES, EDIT_KIT, TOP, SPECTATE,
+#   REMATCH, RANDOM, TOGGLE, SHOP, CLOSE, BACK, NONE
+#  commands (opcional): ["[player] comando", "[console] comando %player%"]
+#  Placeholders: %player% %wins% %losses% %kills% %winrate% %streak%
+#   %best_streak% %gems% %state% %queue_size% %live_duels%
+#  Cabezas: material PLAYER_HEAD + skull-owner: "%player%"
+# ============================================================
+
+menus:
+
+  # ---------------- MENU PRINCIPAL ----------------
+  main:
+    title: "#4DB8FF⚔ &fDuelos &8▸ #4DB8FFMenu"
+    size: 45
+    filler:
+      enabled: false
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    items:
+      profile:
+        slot: 4
+        material: ENDER_CHEST
+        name: "&8| &fDuelos &8▸ #4DB8FFMi perfil"
+        lore:
+          - "&8Botón | Estadísticas"
+          - ""
+          - "&8▪ &7Victorias: &a%wins%"
+          - "&8▪ &7Derrotas: &c%losses%"
+          - "&8▪ &7Winrate: &6%winrate%%"
+          - "&8▪ &7Mejor racha: &d%best_streak%"
+          - "&8▪ &7Gemas: &a%gems%"
+        action: PROFILE
+      shop:
+        slot: 13
+        material: EMERALD
+        name: "&8| &fDuelos &8▸ #55FF55Tienda de gemas"
+        lore:
+          - "&8Botón | Tienda"
+          - ""
+          - "&fⓘ Información:"
+          - "&fCambia tus gemas por premios."
+          - "&8▪ &7Tus gemas: &a%gems%"
+          - ""
+          - "&e▪ ¡Click para abrir la tienda!"
+        action: SHOP
+      challenge:
+        slot: 19
+        material: PAPER
+        name: "&8| &fDuelos &8▸ #55FF55Retar"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fReta a un jugador a un duelo"
+          - "&8▪ &fComando: &a/duel <jugador>"
+          - ""
+          - "&e▪ ¡Escribe el comando!"
+        action: CHALLENGE
+      guide:
+        slot: 20
+        material: BOOK
+        name: "&8| &fDuelos &8▸ #55FF55Guia"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fAprende cómo funcionan los duelos."
+          - ""
+          - "&e▪ ¡Click para leer!"
+        action: GUIDE
+      rules:
+        slot: 21
+        material: WRITABLE_BOOK
+        name: "&8| &fDuelos &8▸ #55FF55Reglas"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fLas reglas del duelo."
+          - ""
+          - "&e▪ ¡Click para verlas!"
+        action: RULES
+      edit-kit:
+        slot: 22
+        material: DIAMOND_SWORD
+        hide-flags: true
+        name: "&8| &fDuelos &8▸ #3DEFC0Editar mi kit"
+        lore:
+          - "&8Botón | Tu kit"
+          - ""
+          - "&fⓘ Información:"
+          - "&fOrdena los ítems de tu kit"
+          - "&fa tu gusto (solo para ti)."
+          - "&8▪ &fLlevas lo mismo, en tu orden."
+          - ""
+          - "#3DEFC0▪ ¡Click para ordenar tu kit!"
+        action: EDIT_KIT
+      top:
+        slot: 23
+        material: GOLD_INGOT
+        name: "&8| &fDuelos &8▸ #FFD84DTop de duelos"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fLos mejores jugadores"
+          - "&fdel servidor."
+          - ""
+          - "&e▪ ¡Click para ver el top!"
+        action: TOP
+      spectate:
+        slot: 24
+        material: ENDER_EYE
+        name: "&8| &fDuelos &8▸ #55FF55Espectar"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fMira los duelos en vivo"
+          - "&fque hay ahora mismo."
+          - "&8▪ &7Duelos en vivo: &f%live_duels%"
+          - ""
+          - "&e▪ ¡Click para ver los duelos!"
+        action: SPECTATE
+      rematch:
+        slot: 25
+        material: NETHER_STAR
+        name: "&8| &fDuelos &8▸ #D580FFRevancha"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fAl terminar un duelo te"
+          - "&fsale el botón de revancha."
+          - ""
+          - "#D580FF▪ ¡Pide la revancha al terminar!"
+        action: REMATCH
+      random:
+        slot: 31
+        material: IRON_SWORD
+        hide-flags: true
+        name: "&8| &fDuelos &8▸ #55FF55Duelo aleatorio"
+        lore:
+          - "&8Botón | Descripción"
+          - ""
+          - "&fⓘ Información:"
+          - "&fEntra a la cola y pelea"
+          - "&fcon un kit al azar."
+          - "&8▪ &7En cola: &f%queue_size%"
+          - ""
+          - "&e▪ ¡Click para entrar a la cola!"
+        action: RANDOM
+      toggle:
+        slot: 36
+        material: SLIME_BALL
+        name: "&8| &fDuelos &8▸ #55FF55Activar/Desactivar"
+        lore:
+          - "&8Botón | Estado"
+          - ""
+          - "&fⓘ Información:"
+          - "&fActiva o desactiva los retos."
+          - "&8▪ &7Estado: %state%"
+          - ""
+          - "&e▪ ¡Click para cambiar!"
+        action: TOGGLE
+      close:
+        slot: 40
+        material: BARRIER
+        name: "#FF5555✘ Cerrar menu"
+        lore:
+          - "&8Botón | Acción"
+          - ""
+          - "#FF5555▪ ¡Click para cerrar!"
+        action: CLOSE
+
+  # ---------------- ELEGIR KIT (Editar mi kit) ----------------
+  kit-select:
+    title: "#3DEFC0✎ &fMi kit &8▸ #3DEFC0Elige kit"
+    size: 45
+    filler:
+      enabled: false
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    # Los kits de kits.yml se colocan en estos slots, en orden
+    kit-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25]
+    kit-item:
+      name: "%kit_name%"
+      lore:
+        - "&8Botón | Kit"
+        - ""
+        - "&fⓘ Información:"
+        - "&fOrdena los ítems de este kit."
+        - ""
+        - "#3DEFC0▪ ¡Click para editar!"
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&7← Volver"
+        lore:
+          - "&e▪ ¡Click para volver!"
+        action: BACK
+
+  # ---------------- TOP DE DUELOS ----------------
+  top:
+    title: "#FFD84D★ &fTop &8▸ #FFD84DDuelos"
+    size: 27
+    filler:
+      enabled: false
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    # Un slot por puesto (puesto 1 = primer slot)
+    player-slots: [11, 12, 13, 14, 15]
+    entry:
+      material: PLAYER_HEAD
+      name: "#FFD84D#%pos% &f%name%"
+      lore:
+        - "&8Jugador | Estadísticas"
+        - ""
+        - "&8▪ &7Victorias: &a%wins%"
+        - "&8▪ &7Derrotas: &c%losses%"
+        - "&8▪ &7Winrate: &6%winrate%%"
+        - "&8▪ &7Mejor racha: &d%best_streak%"
+    items:
+      back:
+        slot: 22
+        material: ARROW
+        name: "&7← Volver"
+        lore:
+          - "&e▪ ¡Click para volver!"
+        action: BACK
+
+  # ---------------- ESPECTAR ----------------
+  spectate:
+    title: "#4DB8FF⚔ &fEspectar &8▸ #4DB8FFDuelos en vivo"
+    size: 45
+    filler:
+      enabled: false
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    duel-slots: [10, 11, 12, 13, 14, 15, 16, 19, 20, 21, 22, 23, 24, 25, 28, 29, 30, 31, 32, 33, 34]
+    duel-item:
+      material: PLAYER_HEAD
+      name: "&f%player1% &7vs &f%player2%"
+      lore:
+        - "&8Duelo | En vivo"
+        - ""
+        - "&8▪ &7Kit: &f%kit%"
+        - "&8▪ &7Tiempo: &f%time%"
+        - "&8▪ &7Espectadores: &f%spectators%"
+        - ""
+        - "&e▪ ¡Click para espectar!"
+    items:
+      back:
+        slot: 40
+        material: ARROW
+        name: "&7← Volver"
+        lore:
+          - "&e▪ ¡Click para volver!"
+        action: BACK
+
+  # ---------------- TIENDA DE GEMAS ----------------
+  # price = gemas. commands se ejecutan al comprar.
+  # %price% y %gems% funcionan en name/lore. Podés agregar más items.
+  shop:
+    title: "#55FF55✦ &fTienda &8▸ #55FF55Gemas"
+    size: 45
+    filler:
+      enabled: true
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+    items:
+      gems:
+        slot: 4
+        material: EMERALD
+        name: "#55FF55&lTus gemas: &f%gems%"
+        lore:
+          - "&7Gana &a1 gema &7por cada duelo ganado."
+        action: NONE
+      golden-apples:
+        slot: 20
+        material: GOLDEN_APPLE
+        amount: 4
+        name: "#FFD84D&l4 Manzanas doradas"
+        lore:
+          - "&8Tienda | Item"
+          - ""
+          - "&8▪ &7Precio: &a%price% gemas"
+          - ""
+          - "&e▪ ¡Click para comprar!"
+        price: 3
+        commands:
+          - "[console] give %player% golden_apple 4"
+        action: NONE
+      diamonds:
+        slot: 22
+        material: DIAMOND
+        amount: 8
+        name: "#4DB8FF&l8 Diamantes"
+        lore:
+          - "&8Tienda | Item"
+          - ""
+          - "&8▪ &7Precio: &a%price% gemas"
+          - ""
+          - "&e▪ ¡Click para comprar!"
+        price: 10
+        commands:
+          - "[console] give %player% diamond 8"
+        action: NONE
+      totem:
+        slot: 24
+        material: TOTEM_OF_UNDYING
+        name: "#FFD84D&lTótem de la inmortalidad"
+        lore:
+          - "&8Tienda | Item"
+          - ""
+          - "&8▪ &7Precio: &a%price% gemas"
+          - ""
+          - "&e▪ ¡Click para comprar!"
+        price: 15
+        commands:
+          - "[console] give %player% totem_of_undying 1"
+        action: NONE
+      back:
+        slot: 40
+        material: ARROW
+        name: "&7← Volver"
+        lore:
+          - "&e▪ ¡Click para volver!"
+        action: BACK
