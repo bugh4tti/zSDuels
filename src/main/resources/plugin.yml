@@ -1,0 +1,21 @@
+name: zSDuels
+version: ${project.version}
+main: com.zsduels.ZSDuels
+api-version: '1.21'
+author: Bughatti
+description: Sistema de duelos 1v1 con menus, kits editables, gemas y tops
+softdepend: [PlaceholderAPI, TAB, FancyHolograms, GHolo, DecentHolograms]
+
+commands:
+  zsduels:
+    description: Comando principal de zSDuels
+    aliases: [duel, duels]
+    usage: /<command> help
+
+permissions:
+  zsduels.use:
+    description: Usar los duelos
+    default: true
+  zsduels.admin:
+    description: Administrar zSDuels (reload, arenas, forceend)
+    default: op
